@@ -14,11 +14,11 @@ jobs:
       # Build Image
 
       - name: Build Docker Image
-        run: docker build . --file Dockerfile -t maelv/ma-docs-service:latest
+        run: docker build . --file Dockerfile -t dexteroverkill/dock-docs-service:latest
 
       # Test container
       - name: Run Docker Container
-        run: docker run -p 8000:80 -d maelv/ma-docs-service:latest
+        run: docker run -p 8000:80 -d dexteroverkill/dock-docs-service:latest
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -37,4 +37,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push tag to Docker Hub
-        run: docker push maelv/ma-docs-service:latest
+        run: docker push dexteroverkill/dock-docs-service:latest

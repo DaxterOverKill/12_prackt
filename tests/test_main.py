@@ -31,4 +31,4 @@ class TestDocuments():
     def test_get_not_empty_docs(self):
         response = requests.get(f'{api_url}/v1/docs')
         assert response.status_code == 200
-        assert len(response.json()) == 0
+        assert len(response.json()) == 1
